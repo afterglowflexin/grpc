@@ -22,7 +22,7 @@ const (
 	GreetingService_SayHello_FullMethodName = "/greeting.GreetingService/SayHello"
 )
 
-// GreetingServiceClient is the client API for GreetingService service.
+// GreetingServiceClient is the client API for GreetingService grpc.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type GreetingServiceClient interface {
@@ -47,7 +47,7 @@ func (c *greetingServiceClient) SayHello(ctx context.Context, in *HelloRequest, 
 	return out, nil
 }
 
-// GreetingServiceServer is the server API for GreetingService service.
+// GreetingServiceServer is the server API for GreetingService grpc.
 // All implementations must embed UnimplementedGreetingServiceServer
 // for forward compatibility
 type GreetingServiceServer interface {
@@ -65,7 +65,7 @@ func (UnimplementedGreetingServiceServer) SayHello(context.Context, *HelloReques
 }
 func (UnimplementedGreetingServiceServer) mustEmbedUnimplementedGreetingServiceServer() {}
 
-// UnsafeGreetingServiceServer may be embedded to opt out of forward compatibility for this service.
+// UnsafeGreetingServiceServer may be embedded to opt out of forward compatibility for this grpc.
 // Use of this interface is not recommended, as added methods to GreetingServiceServer will
 // result in compilation errors.
 type UnsafeGreetingServiceServer interface {
@@ -94,7 +94,7 @@ func _GreetingService_SayHello_Handler(srv interface{}, ctx context.Context, dec
 	return interceptor(ctx, in, info, handler)
 }
 
-// GreetingService_ServiceDesc is the grpc.ServiceDesc for GreetingService service.
+// GreetingService_ServiceDesc is the grpc.ServiceDesc for GreetingService grpc.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var GreetingService_ServiceDesc = grpc.ServiceDesc{
