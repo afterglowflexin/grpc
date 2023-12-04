@@ -22,7 +22,7 @@ const (
 	ChatService_Chat_FullMethodName = "/bidirectional.ChatService/Chat"
 )
 
-// ChatServiceClient is the client API for ChatService service.
+// ChatServiceClient is the client API for ChatService grpc.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type ChatServiceClient interface {
@@ -69,7 +69,7 @@ func (x *chatServiceChatClient) Recv() (*ChatMessage, error) {
 	return m, nil
 }
 
-// ChatServiceServer is the server API for ChatService service.
+// ChatServiceServer is the server API for ChatService grpc.
 // All implementations must embed UnimplementedChatServiceServer
 // for forward compatibility
 type ChatServiceServer interface {
@@ -87,7 +87,7 @@ func (UnimplementedChatServiceServer) Chat(ChatService_ChatServer) error {
 }
 func (UnimplementedChatServiceServer) mustEmbedUnimplementedChatServiceServer() {}
 
-// UnsafeChatServiceServer may be embedded to opt out of forward compatibility for this service.
+// UnsafeChatServiceServer may be embedded to opt out of forward compatibility for this grpc.
 // Use of this interface is not recommended, as added methods to ChatServiceServer will
 // result in compilation errors.
 type UnsafeChatServiceServer interface {
@@ -124,7 +124,7 @@ func (x *chatServiceChatServer) Recv() (*ChatMessage, error) {
 	return m, nil
 }
 
-// ChatService_ServiceDesc is the grpc.ServiceDesc for ChatService service.
+// ChatService_ServiceDesc is the grpc.ServiceDesc for ChatService grpc.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var ChatService_ServiceDesc = grpc.ServiceDesc{

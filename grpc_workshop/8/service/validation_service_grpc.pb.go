@@ -22,7 +22,7 @@ const (
 	ValidationService_CreateUser_FullMethodName = "/validation.ValidationService/CreateUser"
 )
 
-// ValidationServiceClient is the client API for ValidationService service.
+// ValidationServiceClient is the client API for ValidationService grpc.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type ValidationServiceClient interface {
@@ -46,7 +46,7 @@ func (c *validationServiceClient) CreateUser(ctx context.Context, in *CreateUser
 	return out, nil
 }
 
-// ValidationServiceServer is the server API for ValidationService service.
+// ValidationServiceServer is the server API for ValidationService grpc.
 // All implementations must embed UnimplementedValidationServiceServer
 // for forward compatibility
 type ValidationServiceServer interface {
@@ -63,7 +63,7 @@ func (UnimplementedValidationServiceServer) CreateUser(context.Context, *CreateU
 }
 func (UnimplementedValidationServiceServer) mustEmbedUnimplementedValidationServiceServer() {}
 
-// UnsafeValidationServiceServer may be embedded to opt out of forward compatibility for this service.
+// UnsafeValidationServiceServer may be embedded to opt out of forward compatibility for this grpc.
 // Use of this interface is not recommended, as added methods to ValidationServiceServer will
 // result in compilation errors.
 type UnsafeValidationServiceServer interface {
@@ -92,7 +92,7 @@ func _ValidationService_CreateUser_Handler(srv interface{}, ctx context.Context,
 	return interceptor(ctx, in, info, handler)
 }
 
-// ValidationService_ServiceDesc is the grpc.ServiceDesc for ValidationService service.
+// ValidationService_ServiceDesc is the grpc.ServiceDesc for ValidationService grpc.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var ValidationService_ServiceDesc = grpc.ServiceDesc{

@@ -1,0 +1,37 @@
+syntax = "proto3";
+
+package service;
+
+option go_package = "./;grpc";
+
+service FileService {
+  rpc GetFile (FileRequest) returns (stream FileResponse) {}
+  rpc GetFilesNames (FilesNamesRequest) returns (FilesNamesResponse) {}
+  rpc GetFileInfo (FileRequest) returns (FileInfoResponse) {}
+}
+
+message FileRequest {
+  string name = 1;
+}
+
+message FileResponse {
+  string name = 1;
+  int32 size = 2;
+  bytes content = 3;
+}
+
+// -------------------------------------
+
+message FileInfoResponse {
+  string name = 1;
+  int32 size = 2;;
+}
+
+// -------------------------------------
+
+message FilesNamesRequest {
+}
+
+message FilesNamesResponse {
+  repeated string files = 1;
+}

@@ -22,7 +22,7 @@ const (
 	StreamingService_StreamMessages_FullMethodName = "/streaming.StreamingService/StreamMessages"
 )
 
-// StreamingServiceClient is the client API for StreamingService service.
+// StreamingServiceClient is the client API for StreamingService grpc.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type StreamingServiceClient interface {
@@ -70,7 +70,7 @@ func (x *streamingServiceStreamMessagesClient) Recv() (*StreamResponse, error) {
 	return m, nil
 }
 
-// StreamingServiceServer is the server API for StreamingService service.
+// StreamingServiceServer is the server API for StreamingService grpc.
 // All implementations must embed UnimplementedStreamingServiceServer
 // for forward compatibility
 type StreamingServiceServer interface {
@@ -88,7 +88,7 @@ func (UnimplementedStreamingServiceServer) StreamMessages(*StreamRequest, Stream
 }
 func (UnimplementedStreamingServiceServer) mustEmbedUnimplementedStreamingServiceServer() {}
 
-// UnsafeStreamingServiceServer may be embedded to opt out of forward compatibility for this service.
+// UnsafeStreamingServiceServer may be embedded to opt out of forward compatibility for this grpc.
 // Use of this interface is not recommended, as added methods to StreamingServiceServer will
 // result in compilation errors.
 type UnsafeStreamingServiceServer interface {
@@ -120,7 +120,7 @@ func (x *streamingServiceStreamMessagesServer) Send(m *StreamResponse) error {
 	return x.ServerStream.SendMsg(m)
 }
 
-// StreamingService_ServiceDesc is the grpc.ServiceDesc for StreamingService service.
+// StreamingService_ServiceDesc is the grpc.ServiceDesc for StreamingService grpc.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var StreamingService_ServiceDesc = grpc.ServiceDesc{

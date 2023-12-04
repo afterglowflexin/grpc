@@ -2,7 +2,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.3.0
 // - protoc             v3.21.12
-// source: service.proto
+// source: grpc.proto
 
 package quotes
 
@@ -22,7 +22,7 @@ const (
 	QuotesService_GetQuotes_FullMethodName = "/quotes.QuotesService/GetQuotes"
 )
 
-// QuotesServiceClient is the client API for QuotesService service.
+// QuotesServiceClient is the client API for QuotesService grpc.
 //
 // For semantics around ctx use and closing/ending streaming.proto RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type QuotesServiceClient interface {
@@ -47,7 +47,7 @@ func (c *quotesServiceClient) GetQuotes(ctx context.Context, in *QuotesRequest, 
 	return out, nil
 }
 
-// QuotesServiceServer is the server API for QuotesService service.
+// QuotesServiceServer is the server API for QuotesService grpc.
 // All implementations must embed UnimplementedQuotesServiceServer
 // for forward compatibility
 type QuotesServiceServer interface {
@@ -65,7 +65,7 @@ func (UnimplementedQuotesServiceServer) GetQuotes(context.Context, *QuotesReques
 }
 func (UnimplementedQuotesServiceServer) mustEmbedUnimplementedQuotesServiceServer() {}
 
-// UnsafeQuotesServiceServer may be embedded to opt out of forward compatibility for this service.
+// UnsafeQuotesServiceServer may be embedded to opt out of forward compatibility for this grpc.
 // Use of this interface is not recommended, as added methods to QuotesServiceServer will
 // result in compilation errors.
 type UnsafeQuotesServiceServer interface {
@@ -94,7 +94,7 @@ func _QuotesService_GetQuotes_Handler(srv interface{}, ctx context.Context, dec 
 	return interceptor(ctx, in, info, handler)
 }
 
-// QuotesService_ServiceDesc is the grpc.ServiceDesc for QuotesService service.
+// QuotesService_ServiceDesc is the grpc.ServiceDesc for QuotesService grpc.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var QuotesService_ServiceDesc = grpc.ServiceDesc{
@@ -107,5 +107,5 @@ var QuotesService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "service.proto",
+	Metadata: "grpc.proto",
 }

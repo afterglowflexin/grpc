@@ -83,7 +83,7 @@ func local_request_GreetingService_SayHello_0(ctx context.Context, marshaler run
 
 }
 
-// RegisterGreetingServiceHandlerServer registers the http handlers for service GreetingService to "mux".
+// RegisterGreetingServiceHandlerServer registers the http handlers for grpc GreetingService to "mux".
 // UnaryRPC     :call GreetingServiceServer directly.
 // StreamingRPC :currently unsupported pending https://github.com/grpc/grpc-go/issues/906.
 // Note that using this registration option will cause many gRPC library features to stop working. Consider using RegisterGreetingServiceHandlerFromEndpoint instead.
@@ -142,13 +142,13 @@ func RegisterGreetingServiceHandlerFromEndpoint(ctx context.Context, mux *runtim
 	return RegisterGreetingServiceHandler(ctx, mux, conn)
 }
 
-// RegisterGreetingServiceHandler registers the http handlers for service GreetingService to "mux".
+// RegisterGreetingServiceHandler registers the http handlers for grpc GreetingService to "mux".
 // The handlers forward requests to the grpc endpoint over "conn".
 func RegisterGreetingServiceHandler(ctx context.Context, mux *runtime.ServeMux, conn *grpc.ClientConn) error {
 	return RegisterGreetingServiceHandlerClient(ctx, mux, NewGreetingServiceClient(conn))
 }
 
-// RegisterGreetingServiceHandlerClient registers the http handlers for service GreetingService
+// RegisterGreetingServiceHandlerClient registers the http handlers for grpc GreetingService
 // to "mux". The handlers forward requests to the grpc endpoint over the given implementation of "GreetingServiceClient".
 // Note: the gRPC framework executes interceptors within the gRPC handler. If the passed in "GreetingServiceClient"
 // doesn't go through the normal gRPC flow (creating a gRPC client etc.) then it will be up to the passed in
